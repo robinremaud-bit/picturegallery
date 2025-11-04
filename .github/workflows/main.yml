@@ -29,16 +29,9 @@ jobs:
       - name: Checkout 
 
         uses: actions/checkout@v3 
-
- 
-
-      - name: Run semgrep analysis (blocking mode) 
+      - name: Run semgrep analysis
 
         run: semgrep scan --sarif --sarif-output=semgrep.sarif --error 
-
-        #semgrep scan --sarif --sarif-output=semgrep.sarif || true (non blocking mode) 
-
- 
 
       - name: Upload SARIF file to GitHub 
 
